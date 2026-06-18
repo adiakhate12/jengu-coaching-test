@@ -3,8 +3,19 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-// Données fictives réalistes pour le test de Jengu à Dakar
-const initialReservations = [
+interface Reservation {
+  id: string;
+  clientName: string;
+  email: string;
+  phone: string;
+  offer: string;
+  date: string;
+  time: string;
+  status: string;
+  goal: string;
+}
+
+const initialReservations: Reservation[] = [
   {
     id: '1',
     clientName: 'Moussa Diop',
@@ -41,15 +52,12 @@ const initialReservations = [
 ];
 
 export default function CoachDashboard() {
-  const [reservations, setReservations] = useState(initialReservations);
-  const [filter, setFilter] = useState('Tous');
+  const [reservations, setReservations] = useState<Reservation[]>(initialReservations);
+  const [filter, setFilter] = useState<string>('Tous');
 
-  // Changer le statut d'une réservation (Simulé)
   const handleStatusChange = (id: string, newStatus: string) => {
-    setReservations(
-      reservations.map((res) =>
-        res.id === id ? { ...res, status: newStatus } : res
-      )
+    setReservations(prev =>
+      prev.map((res) => (res.id === id ? { ...res, status: newStatus } : res))
     );
   };
 
@@ -60,17 +68,14 @@ export default function CoachDashboard() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white p-6 sm:p-12">
-      
-      {/* Bouton Retour aligné avec le conteneur principal */}
       <div className="max-w-7xl mx-auto mb-6">
         <Link href="/">
-          <button className="text-gray-400 hover:text-white flex items-center gap-2 transition-colors text-sm">
+          <span className="text-gray-400 hover:text-white flex items-center gap-2 transition-colors text-sm cursor-pointer">
             ← Retour au site client
-          </button>
+          </span>
         </Link>
       </div>
 
-      {/* Header */}
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-neutral-800 pb-6 mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
@@ -85,7 +90,6 @@ export default function CoachDashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        {/* Cartes de Statistiques Rapides */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
           <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl">
             <p className="text-sm font-medium text-neutral-400">Total Réservations</p>
@@ -105,7 +109,6 @@ export default function CoachDashboard() {
           </div>
         </div>
 
-        {/* Filtres de Statut */}
         <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
           {['Tous', 'Confirmé', 'En attente', 'Annulé'].map((status) => (
             <button
@@ -122,7 +125,6 @@ export default function CoachDashboard() {
           ))}
         </div>
 
-        {/* Liste / Grille des réservations */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {filteredReservations.length === 0 ? (
             <div className="col-span-full bg-neutral-900 border border-dashed border-neutral-800 rounded-2xl p-12 text-center text-neutral-500">
@@ -135,7 +137,6 @@ export default function CoachDashboard() {
                 className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-neutral-700 transition-all flex flex-col justify-between"
               >
                 <div>
-                  {/* Badge de Statut & Offre */}
                   <div className="flex justify-between items-start gap-2 mb-4">
                     <span className="text-xs font-bold tracking-wide uppercase px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
                       {res.offer}
@@ -153,13 +154,11 @@ export default function CoachDashboard() {
                     </span>
                   </div>
 
-                  {/* Infos Client */}
                   <h3 className="text-xl font-bold text-white mb-1">{res.clientName}</h3>
                   <p className="text-sm text-neutral-400 mb-4">
                     {res.phone} • {res.email}
                   </p>
 
-                  {/* Date & Heure du RDV */}
                   <div className="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60 flex gap-4 mb-4 text-sm">
                     <div>
                       <span className="text-neutral-500 block text-xs uppercase font-semibold">Date</span>
@@ -171,7 +170,6 @@ export default function CoachDashboard() {
                     </div>
                   </div>
 
-                  {/* Objectif du Client */}
                   {res.goal && (
                     <div className="mb-6">
                       <span className="text-neutral-500 block text-xs uppercase font-semibold mb-1">Objectif</span>
@@ -180,7 +178,6 @@ export default function CoachDashboard() {
                   )}
                 </div>
 
-                {/* Actions du Coach */}
                 <div className="flex gap-2 pt-4 border-t border-neutral-800/60">
                   {res.status !== 'Confirmé' && (
                     <button
