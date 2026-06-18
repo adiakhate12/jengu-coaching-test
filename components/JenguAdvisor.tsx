@@ -63,7 +63,7 @@ export default function JenguAdvisor() {
   return (
     <div className="bg-zinc-900/60 border border-zinc-800 rounded-3xl p-6 md:p-8 max-w-2xl mx-auto shadow-xl">
       <div className="flex items-center gap-2 mb-6">
-        <span className="text-xl">🤖</span>
+        <span className="text-xl"></span>
         <h3 className="text-lg font-black tracking-wider text-amber-500 uppercase">
           Conseiller Virtuel Jengu
         </h3>

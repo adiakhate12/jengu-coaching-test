@@ -159,7 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🤖 SECTION ASSISTANT IA BONUS */}
+      {/*  SECTION ASSISTANT IA BONUS */}
       <section className="py-12 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-xl md:text-2xl font-black uppercase tracking-wider text-white">
