@@ -1,5 +1,6 @@
 'use client';
 
+import JenguAdvisor from '../components/JenguAdvisor';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { BookingForm } from '../components/booking/BookingForm';
@@ -158,6 +159,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 🤖 SECTION ASSISTANT IA BONUS */}
+      <section className="py-12 px-4 max-w-7xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-xl md:text-2xl font-black uppercase tracking-wider text-white">
+            Besoin d'aide pour choisir ?
+          </h2>
+        </div>
+        <JenguAdvisor />
+      </section>
+
       {/* 🏋️‍♂️ SECTION : LES COACHS */}
       <Coachs />
 
@@ -168,7 +179,7 @@ export default function Home() {
       <Faq />
 
       {/* 📅 SECTION FORMULAIRE DE RÉSERVATION */}
-      <section className="py-20 bg-zinc-950 px-4 border-t border-zinc-900">
+      <section id="booking-section" className="py-20 bg-zinc-950 px-4 border-t border-zinc-900">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider text-white">
