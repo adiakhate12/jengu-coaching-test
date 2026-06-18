@@ -30,7 +30,7 @@ const JENGU_OFFERS: JenguOffer[] = [
       'Idéal pour les emplois du temps chargés',
       'Routine hautement adaptable et changeante',
       'Accompagnement de qualité supérieure',
-      'Réservation du coach 48h à l\'avance'
+      "Réservation du coach 48h à l'avance"
     ]
   },
   {
@@ -43,7 +43,7 @@ const JENGU_OFFERS: JenguOffer[] = [
       '3 séances de coaching personnalisé par semaine',
       'Jours et heures fixes dédiés pour une assiduité maximale',
       'Suivi régulier et progression accélérée',
-      'Développement d\'une routine sportive durable',
+      "Développement d'une routine sportive durable",
       'Priorité absolue sur le choix de vos créneaux'
     ]
   },
@@ -67,7 +67,7 @@ const JENGU_OFFERS: JenguOffer[] = [
     features: [
       'Accompagnement global (Sport & Mental)',
       'Suivi nutritionnel adapté',
-      'Communauté privée d\'entraide'
+      "Communauté privée d'entraide"
     ]
   }
 ];
@@ -137,7 +137,7 @@ export default function Home() {
                       <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-300 leading-normal">
                         <span className="text-amber-500 font-bold shrink-0">✓</span>
                         <span>{feature}</span>
-                      </td>
+                      </li>
                     ))}
                   </ul>
                 </div>
