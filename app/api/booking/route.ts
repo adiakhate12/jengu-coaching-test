@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// On initialise Resend avec la clé API sécurisée
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Solution sécurisée pour le build
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummyKeyForBuild_123');
 
 export async function POST(request: Request) {
   try {
