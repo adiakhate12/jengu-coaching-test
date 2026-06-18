@@ -84,7 +84,7 @@ export default function Home() {
       <nav className="max-w-7xl mx-auto px-4 pt-4 flex justify-end">
         <Link href="/coach">
           <button className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-amber-500 text-xs font-medium py-2 px-4 rounded-xl transition duration-200 flex items-center gap-2">
-            Espace Coach 👔
+            Espace Coach 
           </button>
         </Link>
       </nav>
