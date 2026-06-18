@@ -1,12 +1,7 @@
-import Link from 'next/link';
-   <Link href="/coach">
-     <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition duration-200">
-       Accéder à l'Espace Coach 👔
-     </button>
-   </Link>
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { BookingForm } from '../components/booking/BookingForm';
 import Coachs from '../components/Coachs';
 import Testimonials from '../components/Testimonials';
@@ -85,8 +80,17 @@ export default function Home() {
   return (
     <main className="bg-zinc-950 min-h-screen text-white font-sans selection:bg-amber-500/30 selection:text-amber-500">
       
+      {/* 🧭 BARRE DE NAVIGATION SECRÈTE (POUR LE COACH) */}
+      <nav className="max-w-7xl mx-auto px-4 pt-4 flex justify-end">
+        <Link href="/coach">
+          <button className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-amber-500 text-xs font-medium py-2 px-4 rounded-xl transition duration-200 flex items-center gap-2">
+            Espace Coach 👔
+          </button>
+        </Link>
+      </nav>
+
       {/* 🌟 SECTION HERO / EN-TÊTE */}
-      <section className="pt-20 pb-12 text-center px-4 max-w-4xl mx-auto">
+      <section className="pt-16 pb-12 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">
           JENGU <span className="text-amber-500">CONFIDENCE BODY</span>
         </h1>
@@ -133,7 +137,7 @@ export default function Home() {
                       <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-300 leading-normal">
                         <span className="text-amber-500 font-bold shrink-0">✓</span>
                         <span>{feature}</span>
-                      </li>
+                      </td>
                     ))}
                   </ul>
                 </div>
@@ -154,13 +158,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🏋️‍♂️ NOUVELLE SECTION : LES COACHS */}
+      {/* 🏋️‍♂️ SECTION : LES COACHS */}
       <Coachs />
 
-      {/* 💬 NOUVELLE SECTION : TÉMOIGNAGES */}
+      {/* 💬 SECTION : TÉMOIGNAGES */}
       <Testimonials />
 
-      {/* ❓ NOUVELLE SECTION : FAQ INTERACTIVE */}
+      {/* ❓ SECTION : FAQ INTERACTIVE */}
       <Faq />
 
       {/* 📅 SECTION FORMULAIRE DE RÉSERVATION */}

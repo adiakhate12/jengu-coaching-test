@@ -1,12 +1,7 @@
-import Link from 'next/link';
-<Link href="/">
-     <button className="text-gray-400 hover:text-white mb-4 flex items-center gap-2">
-       ← Retour au site client
-     </button>
-   </Link>
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 // Données fictives réalistes pour le test de Jengu à Dakar
 const initialReservations = [
@@ -65,6 +60,16 @@ export default function CoachDashboard() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white p-6 sm:p-12">
+      
+      {/* Bouton Retour aligné avec le conteneur principal */}
+      <div className="max-w-7xl mx-auto mb-6">
+        <Link href="/">
+          <button className="text-gray-400 hover:text-white flex items-center gap-2 transition-colors text-sm">
+            ← Retour au site client
+          </button>
+        </Link>
+      </div>
+
       {/* Header */}
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-neutral-800 pb-6 mb-8 gap-4">
         <div>
