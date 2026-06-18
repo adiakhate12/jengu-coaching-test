@@ -1,3 +1,9 @@
+import Link from 'next/link';
+   <Link href="/coach">
+     <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition duration-200">
+       Accéder à l'Espace Coach 👔
+     </button>
+   </Link>
 'use client';
 
 import React, { useState } from 'react';

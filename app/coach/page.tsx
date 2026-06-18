@@ -1,3 +1,9 @@
+import Link from 'next/link';
+<Link href="/">
+     <button className="text-gray-400 hover:text-white mb-4 flex items-center gap-2">
+       ← Retour au site client
+     </button>
+   </Link>
 'use client';
 
 import { useState } from 'react';
